@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../exadel_events.db"
+}
+
+model User {
+  id               String       @id @default(cuid())
+  name             String
+  email            String       @unique
+  password         String
+  role             String       @default("GUEST")
+  gender           String       @default("EMPTY")
+  subscribedEvents EventGuest[]
+}
+
+model Event {
+  id          String       @id @default(cuid())
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  title       String
+  description String
+  type        String
+  startDate   DateTime
+  endDate     DateTime
+  isOnline    Boolean
+  address     String?
+  eventGuests EventGuest[]
+}
+
+model EventGuest {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  eventId   String
+  Event     Event    @relation(fields: [eventId], references: [id])
+  User      User     @relation(fields: [userId], references: [id])
+}

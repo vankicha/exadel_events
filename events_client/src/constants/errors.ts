@@ -1,0 +1,9 @@
+export const NAME_TOO_SHORT_ERROR_MESSAGE = "Name must contain at least 1 character.";
+export const EMAIL_INVALID_ERROR_MESSAGE = "Email is invalid.";
+export const PASSWORD_TOO_SHORT_ERROR_MESSAGE = "Password must contain at least 6 characters.";
+export const TITLE_TOO_SHORT_ERROR_MESSAGE = "Title must contain at least 1 character.";
+export const DESCRIPTION_TOO_SHORT_ERROR_MESSAGE = "Description must contain at least 1 character.";
+export const INVALID_DATE_ERROR_MESSAGE = "Invalid date format.";
+export const END_DATE_AFTER_START_DATE_ERROR_MESSAGE = "End date must be after start date.";
+export const ADDRESS_REQUIRED_ERROR_MESSAGE = "Address is required when the event is not online.";
+export const EVENT_TYPE_ERROR_MESSAGE = "Please provide a valid event type.";
