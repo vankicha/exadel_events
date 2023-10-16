@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import EventDetails from "@components/EventDetails";
 import EventGuests from "@components/EventGuests";
-// import Mapbox from "@components/Mapbox";
+import Mapbox from "@components/Mapbox";
 import useUser from "@hooks/useUser";
 import { GetEventData } from "@utils/loaders";
 
@@ -19,7 +19,7 @@ const Event = () => {
 			</Row>
 			{!event.isOnline && (
 				<Row className="mt-5">
-					{/* <Mapbox location={event.address} /> */}
+					<Mapbox location={event.address} />
 				</Row>
 			)}
 		</Container>
